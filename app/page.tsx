@@ -92,7 +92,7 @@ export default function Home() {
             </Link>
             <Link 
               href="/login"
-              className="px-8 py-3 border-2 border-red-bd text-red-bd rounded-lg hover:bg-red-bd hover:text-white font-semibold text-lg"
+              className="px-8 py-3 border-2 border-red-bd text-red-bd rounded-lg hover:bg-white hover:text-green-bd hover:border-green-bd font-semibold text-lg transition-colors"
             >
               লগইন করুন
             </Link>
