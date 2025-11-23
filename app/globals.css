@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFEF7;
+  --foreground: #1a1a1a;
+  --red: #F42A41;
+  --green: #006A4E;
+  --accent-red: #F42A41;
+  --accent-green: #006A4E;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-red: var(--red);
+  --color-green: var(--green);
+  --font-sans: var(--font-bengali);
 }
 
 body {
-  background: var(--background);
+  background: #FFFEF7;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans Bengali', 'Mukti', 'Kalpurush', 'Siyam Rupali', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-red-bd {
+    color: #F42A41;
+  }
+  .text-green-bd {
+    color: #006A4E;
+  }
+  .bg-red-bd {
+    background-color: #F42A41;
+  }
+  .bg-green-bd {
+    background-color: #006A4E;
+  }
+  .bg-pastel-yellow {
+    background-color: #FFFEF7;
+  }
+  .border-red-bd {
+    border-color: #F42A41;
+  }
+  .border-green-bd {
+    border-color: #006A4E;
+  }
 }
