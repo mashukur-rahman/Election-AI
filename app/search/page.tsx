@@ -62,7 +62,7 @@ function SearchContent() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             <Link href="/" className="text-2xl font-bold text-red-bd">
-              গণতন্ত্রের জন্য
+              নাগরিক সংবাদ
             </Link>
             <div className="flex items-center gap-4 flex-1 max-w-md justify-center">
               <form onSubmit={handleSearch} className="flex-1">

@@ -5,6 +5,10 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 interface User {
   email: string;
   name: string;
+  profilePicture?: string;
+  bio?: string;
+  district?: string;
+  joinDate?: string;
 }
 
 interface AuthContextType {
@@ -39,7 +43,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (email === 'test@gmail.com' && password === '123456') {
       const userData: User = {
         email: email,
-        name: 'পরীক্ষা ব্যবহারকারী', // Test User in Bangla
+        name: 'রহিম আহমেদ',
+        profilePicture: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
+        bio: 'নির্বাচন গণতন্ত্র এবং স্বচ্ছতায় বিশ্বাসী। স্থানীয় সমস্যা সমাধানে সক্রিয়।',
+        district: 'ঢাকা জেলা',
+        joinDate: 'নভেম্বর ২০২৫',
       };
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));

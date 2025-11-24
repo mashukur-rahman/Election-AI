@@ -1,8 +1,17 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Auto-redirect to login page
+    router.push("/login");
+  }, [router]);
+
   return (
     <div className="min-h-screen bg-pastel-yellow">
       {/* Header */}
@@ -10,11 +19,11 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             <Link href="/" className="text-2xl font-bold text-red-bd">
-              গণতন্ত্রের জন্য
+              নাগরিক সংবাদ
             </Link>
             <div className="flex items-center gap-4 flex-1 max-w-md justify-center">
-              <form 
-                action="/search" 
+              <form
+                action="/search"
                 method="get"
                 className="flex-1"
                 onSubmit={(e) => {
@@ -55,14 +64,14 @@ export default function Home() {
               </form>
             </div>
             <nav className="flex gap-4">
-              <Link 
-                href="/login" 
+              <Link
+                href="/login"
                 className="px-4 py-2 text-green-bd hover:underline font-medium"
               >
                 লগইন
               </Link>
-              <Link 
-                href="/register" 
+              <Link
+                href="/register"
                 className="px-4 py-2 bg-green-bd text-white rounded-md hover:bg-opacity-90 font-medium"
               >
                 নিবন্ধন
@@ -79,18 +88,18 @@ export default function Home() {
             সাংসদ প্রার্থীদের সম্পর্কে জানুন
           </h2>
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            আমাদের AI গবেষণা এজেন্ট ইন্টারনেট জুড়ে খুঁজে বের করবে এবং 
+            আমাদের AI গবেষণা এজেন্ট ইন্টারনেট জুড়ে খুঁজে বের করবে এবং
             সাংসদ প্রার্থীদের সম্পর্কে গুরুত্বপূর্ণ তথ্য সংগ্রহ করে উপস্থাপন করবে
           </p>
-          
+
           <div className="flex gap-4 justify-center mt-12">
-            <Link 
+            <Link
               href="/register"
               className="px-8 py-3 bg-green-bd text-white rounded-lg hover:bg-opacity-90 font-semibold text-lg shadow-lg"
             >
               শুরু করুন
             </Link>
-            <Link 
+            <Link
               href="/login"
               className="px-8 py-3 border-2 border-red-bd text-red-bd rounded-lg hover:bg-white hover:text-green-bd hover:border-green-bd font-semibold text-lg transition-colors"
             >
@@ -107,7 +116,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-bold text-red-bd mb-3">প্রোফাইল তৈরি করুন</h3>
             <p className="text-gray-700">
-              সাংসদ প্রার্থীদের প্রোফাইল তৈরি করুন নাম, ছবি, নির্বাচনী এলাকা এবং 
+              সাংসদ প্রার্থীদের প্রোফাইল তৈরি করুন নাম, ছবি, নির্বাচনী এলাকা এবং
               দলীয় সম্পর্ক সহ
             </p>
           </div>
@@ -118,7 +127,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-bold text-green-bd mb-3">গভীর গবেষণা</h3>
             <p className="text-gray-700">
-              আমাদের AI এজেন্ট ইন্টারনেট জুড়ে প্রার্থীদের সম্পর্কে 
+              আমাদের AI এজেন্ট ইন্টারনেট জুড়ে প্রার্থীদের সম্পর্কে
               নিবন্ধ এবং তথ্য খুঁজে বের করবে
             </p>
           </div>
@@ -129,7 +138,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-bold text-red-bd mb-3">সারসংক্ষেপ দেখুন</h3>
             <p className="text-gray-700">
-              গবেষণার ফলাফল সংক্ষিপ্ত এবং সুসংগঠিতভাবে দেখুন 
+              গবেষণার ফলাফল সংক্ষিপ্ত এবং সুসংগঠিতভাবে দেখুন
               যাতে সহজেই বুঝতে পারেন
             </p>
           </div>
@@ -139,7 +148,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="mt-20 border-t-2 border-green-bd bg-pastel-yellow py-8">
         <div className="container mx-auto px-4 text-center text-gray-600">
-          <p>© ২০২৪ গণতন্ত্রের জন্য - একটি সিভিক টেক প্ল্যাটফর্ম</p>
+          <p>© ২০२५ নাগরিক সংবাদ - একটি সিভিক টেক প্ল্যাটফর্ম</p>
         </div>
       </footer>
     </div>

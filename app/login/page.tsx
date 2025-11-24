@@ -36,7 +36,7 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <Link href="/" className="text-2xl font-bold text-red-bd block text-center mb-2">
-            গণতন্ত্রের জন্য
+            নাগরিক সংবাদ
           </Link>
           <h2 className="text-center text-3xl font-bold text-gray-900 mb-2">
             লগইন করুন

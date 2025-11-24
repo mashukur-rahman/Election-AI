@@ -10,8 +10,8 @@ const bengaliFont = Noto_Sans_Bengali({
 });
 
 export const metadata: Metadata = {
-  title: "গণতন্ত্রের জন্য - Election AI",
-  description: "সাংসদ প্রার্থীদের সম্পর্কে গভীর গবেষণা",
+  title: "নাগরিক সংবাদ - Nagorik Songbad",
+  description: "নাগরিক সংবাদ - নির্বাচন সংক্রান্ত গণতান্ত্রিক সংবাদ প্ল্যাটফর্ম",
 };
 
 export default function RootLayout({

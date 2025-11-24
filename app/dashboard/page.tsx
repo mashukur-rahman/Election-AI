@@ -109,7 +109,7 @@ export default function DashboardPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             <Link href="/dashboard" className="text-2xl font-bold text-red-bd">
-              গণতন্ত্রের জন্য
+              নাগরিক সংবাদ
             </Link>
             <div className="flex items-center gap-4 flex-1 max-w-md justify-center">
               <form
@@ -155,10 +155,10 @@ export default function DashboardPage() {
             </div>
             <div className="flex items-center gap-4">
               <Link
-                href="/dashboard/create-profile"
-                className="px-4 py-2 bg-green-bd text-white rounded-md hover:bg-opacity-90 font-medium"
+                href="/dashboard/profile"
+                className="px-4 py-2 bg-green-bd text-white rounded-md hover:bg-opacity-90 font-medium flex items-center gap-2"
               >
-                নতুন প্রোফাইল তৈরি করুন
+                👤 আপনার প্রোফাইল
               </Link>
               <button
                 onClick={handleLogout}
