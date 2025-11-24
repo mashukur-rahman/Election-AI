@@ -3,19 +3,32 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useAuth } from "../context/AuthContext";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual authentication
-    // For now, just redirect to dashboard
-    router.push("/dashboard");
+    setError("");
+    setIsLoading(true);
+
+    const success = await login(formData.email, formData.password);
+
+    if (success) {
+      router.push("/dashboard");
+    } else {
+      setError("ইমেইল বা পাসওয়ার্ড ভুল। পরীক্ষার জন্য ব্যবহার করুন: test@gmail.com / 123456");
+    }
+
+    setIsLoading(false);
   };
 
   return (
@@ -34,6 +47,11 @@ export default function LoginPage() {
         </div>
         
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          {error && (
+            <div className="bg-red-100 border-2 border-red-bd text-red-bd px-4 py-3 rounded-lg">
+              {error}
+            </div>
+          )}
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -71,9 +89,10 @@ export default function LoginPage() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-green-bd hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-bd"
+              disabled={isLoading}
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-green-bd hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-bd disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              লগইন করুন
+              {isLoading ? "লগইন হচ্ছে..." : "লগইন করুন"}
             </button>
           </div>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "./context/AuthContext";
 
 const bengaliFont = Noto_Sans_Bengali({
   variable: "--font-bengali",
@@ -23,7 +24,9 @@ export default function RootLayout({
       <body
         className={`${bengaliFont.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
